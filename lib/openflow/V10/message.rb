@@ -1,5 +1,5 @@
 require 'bit-struct'
- 
+  
 module OpenFlow
 	module V10
 		class Message < BitStruct	
