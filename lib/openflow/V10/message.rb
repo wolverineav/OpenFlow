@@ -1,14 +1,17 @@
+require 'bit-struct'
+
 module OpenFlow
 	module V10
-		class Message
+		class Message < BitStruct	
+			unsigned :version, 8, "Version"
+			unsigned :type, 8, "Type"
+			unsigned :len, 16, "Message Length"
+			unsigned :xid, 32, "Transfer ID"
 
-			attr_reader :type, :version, :xid
-
-			def initialize(type=0, xid=0)
-				@version = 1
-				@type = type
-				@xid = xid
-			end
+			initial_value.version = 1
+			initial_value.type = 0
+			initial_value.len = 0
+			initial_value.xid = 0
 		end
 	end
 end
