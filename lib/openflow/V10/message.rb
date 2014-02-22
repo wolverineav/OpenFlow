@@ -3,7 +3,7 @@ require 'bit-struct'
 module OpenFlow
 	module V10
 		class Message < BitStruct	
-			unsigned :version, 8, "Version"
+			unsigned :version, 8, "OF Version"
 			unsigned :type, 8, "Type"
 			unsigned :len, 16, "Message Length"
 			unsigned :xid, 32, "Transfer ID"
